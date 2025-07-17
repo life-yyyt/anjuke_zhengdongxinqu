@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区房价最高的20个小区</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区房价最高的20个小区</h1>
+        <div class="chart-container">
+            <div id="top-20-communities-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var top20CommunitiesChart = echarts.init(document.getElementById('top-20-communities-container'));
+        var top20CommunitiesOption = {
+            title: {
+                text: '郑东新区房价最高的20个小区'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ['联盟新城二期', '瀚海晴宇', '中海云鼎湖居', '海马壹号公馆', '鸿园玉兰苑(西苑别墅)', '普罗旺世龙之梦西苑', '建业天筑', '温哥华山庄(北区)', '海马公园(1B区)', '中义阿卡迪亚', '联盟新城一期', '恒大悦龙台', '永威东棠', '老街绿地海珀兰轩四期', '绿城百合公寓(秋月苑)', '古德佳苑', '联盟新城四期', '绿城百合公寓(云栖苑)']
+            },
+            yAxis: {
+                type: 'value',
+                name: '平均单价(元/平方米)'
+            },
+            series: [
+                {
+                    name: '平均单价',
+                    type: 'bar',
+                    data: [29467, 27813, 27788, 27427, 26738, 26525, 25785, 25715, 25284, 24363, 24279, 24033, 23933, 23728, 23467, 23330, 23330, 23313, 23267, 22905]
+                }
+            ]
+        };
+        top20CommunitiesChart.setOption(top20CommunitiesOption);
+    </script>
+</body>
+</html>

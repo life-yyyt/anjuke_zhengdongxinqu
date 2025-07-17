@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区面积与单价关系</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区面积与单价关系</h1>
+        <div class="chart-container">
+            <div id="area-price-relation-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var areaPriceRelationChart = echarts.init(document.getElementById('area-price-relation-container'));
+        var areaPriceRelationOption = {
+            title: {
+                text: '郑东新区面积与单价关系'
+            },
+            tooltip: {},
+            xAxis: {
+                name: '面积(平方米)',
+                type: 'value'
+            },
+            yAxis: {
+                name: '单价(元/平方米)',
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '数据点',
+                    type: 'scatter',
+                    data: [
+                        [100, 15000],
+                        [120, 16000],
+                        [150, 18000],
+                        [200, 20000],
+                        [300, 25000]
+                    ],
+                    symbolSize: 5
+                },
+                {
+                    name: '趋势线',
+                    type: 'line',
+                    data: [],
+                    smooth: true,
+                    lineStyle: {
+                        color: 'red'
+                    }
+                }
+            ]
+        };
+        areaPriceRelationChart.setOption(areaPriceRelationOption);
+    </script>
+</body>
+</html>

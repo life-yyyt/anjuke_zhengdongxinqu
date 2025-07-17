@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区房价区间分布</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区房价区间分布</h1>
+        <div class="chart-container">
+            <div id="price-range-distribution-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var priceRangeDistributionChart = echarts.init(document.getElementById('price-range-distribution-container'));
+        var priceRangeDistributionOption = {
+            title: {
+                text: '郑东新区房价区间分布',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [
+                {
+                    name: '房价区间',
+                    type: 'pie',
+                    radius: ['30%', '50%'],
+                    data: [
+                        {value: 43.4, name: '1.5-2万'},
+                        {value: 26.0, name: '1-1.5万'},
+                        {value: 24.3, name: '2-2.5万'},
+                        {value: 4.0, name: '2.5万以上'},
+                        {value: 2.4, name: '1万以下'}
+                    ]
+                }
+            ]
+        };
+        priceRangeDistributionChart.setOption(priceRangeDistributionOption);
+    </script>
+</body>
+</html>

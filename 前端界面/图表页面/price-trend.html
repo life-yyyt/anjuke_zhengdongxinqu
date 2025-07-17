@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区房价趋势（按建造年份）</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区房价趋势（按建造年份）</h1>
+        <div class="chart-container">
+            <div id="price-trend-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var priceTrendChart = echarts.init(document.getElementById('price-trend-container'));
+        var priceTrendOption = {
+            title: {
+                text: '郑东新区房价趋势(按建造年份)'
+            },
+            tooltip: {},
+            legend: {
+                data: ['平均单价', '房源数量']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['1992', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025']
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '平均单价(元/平方米)'
+                },
+                {
+                    type: 'value',
+                    name: '房源数量(套)',
+                    opposite: true
+                }
+            ],
+            series: [
+                {
+                    name: '平均单价',
+                    type: 'line',
+                    data: [19254, 12338, 11794, 18039, 16008, 17218, 18069, 19054, 18335, 16905, 17925, 17571, 17532, 16877, 17262, 17082, 17749, 18536, 18951, 14288, 13768, 16465, 15640, 16012, 20815, 16078]
+                },
+                {
+                    name: '房源数量',
+                    type: 'bar',
+                    yAxisIndex: 1,
+                    data: [25, 8, 6, 4, 12, 140, 170, 130, 150, 140, 220, 170, 150, 160, 170, 140, 110, 70, 50, 35, 25, 18, 15]
+                }
+            ]
+        };
+        priceTrendChart.setOption(priceTrendOption);
+    </script>
+</body>
+</html>

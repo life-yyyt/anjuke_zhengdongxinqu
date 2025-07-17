@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区房屋总价分布</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区房屋总价分布</h1>
+        <div class="chart-container">
+            <div id="total-price-distribution-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var totalPriceDistributionChart = echarts.init(document.getElementById('total-price-distribution-container'));
+        var totalPriceDistributionOption = {
+            title: {
+                text: '郑东新区房屋总价分布'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ['0', '110万','130万','160万','200万','240万','300万','340万','380万','400万','440万','480万','540万','600万', '800万', '1000万', '1200万', '1400万']
+            },
+            yAxis: {
+                type: 'value',
+                name: '数量'
+            },
+            series: [
+                {
+                    name: '数量',
+                    type: 'bar',
+                    data: [0, 10, 250, 750, 790, 440, 370, 220,110,20,5,10,5,0,0,3,0,1]
+                }
+            ]
+        };
+        totalPriceDistributionChart.setOption(totalPriceDistributionOption);
+    </script>
+</body>
+</html>

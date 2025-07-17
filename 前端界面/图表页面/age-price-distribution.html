@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区不同房龄价格分布</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区不同房龄价格分布</h1>
+        <div class="chart-container">
+            <div id="age-price-distribution-container" class="chart"></div>
+        </div>
+    </div>
+    <script>
+        var agePriceDistributionChart = echarts.init(document.getElementById('age-price-distribution-container'));
+        var agePriceDistributionOption = {
+            title: {
+                text: '郑东新区不同房龄价格分布'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'box'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['5年内', '5-10年', '10-15年', '15-20年', '20年以上']
+            },
+            yAxis: {
+                type: 'value',
+                name: '单价(元/平方米)'
+            },
+            series: [
+                {
+                    name: '价格',
+                    type: 'boxplot',
+                    data: [
+                        [7000, 12500, 14500, 18300, 26900],
+                        [5300, 14500, 18000, 22000, 30500],
+                        [8000, 14000, 17000, 20500, 28000],
+                        [10000, 16000, 18000, 21000, 27300],
+                        [10500, 13500, 16300, 19000, 23000]
+                    ]
+                }
+            ]
+        };
+        agePriceDistributionChart.setOption(agePriceDistributionOption);
+    </script>
+</body>
+</html>

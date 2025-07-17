@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑东新区房屋建造年份分布</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>郑东新区房屋建造年份分布</h1>
+        <div id="build-year-distribution-container" style="width: 800px; height: 400px;"></div>
+    </div>
+    <script>
+        var buildYearDistributionChart = echarts.init(document.getElementById('build-year-distribution-container'));
+        var buildYearDistributionOption = {
+            title: {
+                text: '郑东新区房屋建造年份分布'
+            },
+            tooltip: {},
+            xAxis: {
+                type: 'category',
+                data: ['1995', '2000', '2005', '2010', '2015', '2020', '2025']
+            },
+            yAxis: {
+                type: 'value',
+                name: '数量'
+            },
+            series: [
+                {
+                    name: '数量',
+                    type: 'bar',
+                    data: [10, 5, 80, 450, 350, 120, 20]
+                }
+            ]
+        };
+        buildYearDistributionChart.setOption(buildYearDistributionOption);
+    </script>
+</body>
+</html>
